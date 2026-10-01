@@ -1,0 +1,26 @@
+0x00002aaaab2cb540 in ?? ()
+
+### Sin simbolos: break validate_key NO existe
+Function "validate_key" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+
+### Breakpoint por DIRECCION en la funcion desconocida (FUN_00401156)
+Breakpoint 1 at 0x401156
+
+Breakpoint 1, 0x0000000000401156 in ?? ()
+0x2aaaab2abf2a:	"FDSI-REVERSE-2026"
+
+### Breakpoint al final del ciclo: acumulador de diferencias
+Breakpoint 2 at 0x4011e7
+
+Breakpoint 2, 0x00000000004011e7 in ?? ()
+score = 0
+
+### Volver al llamador y ver retorno (RAX)
+0x00000000004012d2 in ?? ()
+rax            0x1                 1
+=== FDSI CrackMe Level 2 ===
+Hint: static + dynamic analysis.
+License accepted.
+FLAG{ghidra_plus_gdb}
+[Inferior 1 (process 739) exited normally]
