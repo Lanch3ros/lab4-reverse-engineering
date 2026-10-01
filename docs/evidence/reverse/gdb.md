@@ -102,6 +102,8 @@ FLAG{ghidra_plus_gdb}
 [Inferior 1 exited normally]
 ```
 
+![GDB con la clave correcta](screenshots/06_gdb_clave_buena.png)
+
 ---
 
 ## Prueba 3 — Largo correcto, una sola letra distinta (`FDSI-REVERSE-2025`)
@@ -117,6 +119,8 @@ Invalid license.
 ```
 
 **Por qué `score = 0x3`:** la última letra esperada es `'6'` (0x36) y escribimos `'5'` (0x35). La diferencia, calculada con XOR, es `0x36 XOR 0x35 = 0x03`. Ese `3` queda "pegado" en `score` gracias al `OR`, así que el resultado final ya no puede ser 0.
+
+![GDB con una letra distinta](screenshots/07_gdb_clave_mala.png)
 
 ---
 

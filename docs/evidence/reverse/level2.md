@@ -209,8 +209,22 @@ exit=3
 
 "Esconder" la clave con XOR **no es seguridad, es solo ofuscación**. Como el programa trae dentro todo lo necesario para comprobar la clave (el arreglo `k` y el arreglo `expected`), cualquiera puede invertir la operación. Si la validación ocurre en la máquina del usuario, el usuario puede verla y revertirla. Los secretos reales deben validarse en un servidor, o con criptografía de verdad (por ejemplo, firmas digitales de licencias), nunca con una "clave escondida" dentro del programa.
 
-## Capturas (carpeta `screenshots/`)
-- `level2_main_ghidra.png`: decompilador de `main` mostrando la llamada a `validate_key`.
-- `level2_validate_key_ghidra.png`: `validate_key` con las variables renombradas.
-- `level2_rodata_ghidra.png`: los arreglos `k` y `expected` en la vista Listing.
-- `level2_flag.png`: terminal con la ejecución exitosa.
+## Capturas
+
+**`main` en el decompilador de Ghidra:** la decisión depende de `validate_key(argv[1])`.
+
+![main en Ghidra](screenshots/08_ghidra_main.png)
+
+**`validate_key` antes y después de renombrar variables:** `diferencias`, `clave_usuario` y `letra_transformada` son nombres puestos por nosotros.
+
+![validate_key antes de renombrar](screenshots/09_ghidra_validate_key_before.png)
+
+![validate_key después de renombrar](screenshots/09_ghidra_validate_key_after.png)
+
+**Arreglos `k` y `expected` en la vista Listing:**
+
+![k y expected en .rodata](screenshots/10_ghidra_datos_k_expected.png)
+
+**Ejecución con la clave reconstruida:**
+
+![FLAG del Nivel 2](screenshots/04_level2_flag.png)

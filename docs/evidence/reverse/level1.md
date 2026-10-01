@@ -121,6 +121,10 @@ return 2;
 
 XOR es una operación que se deshace aplicándola dos veces. Por ejemplo, el primer byte es `0x1c`, y `0x1c XOR 0x5a = 0x46`, que es la letra `F`. En cambio, la contraseña **sí** quedó en texto plano, y ese es el fallo.
 
+![Ejecución con contraseña falsa](screenshots/01_level1_denegado.png)
+
+![strings revela REDTEAM-101](screenshots/02_level1_strings.png)
+
 ## 4. Prueba de la hipótesis
 
 ```text
@@ -130,6 +134,8 @@ Access granted.
 FLAG{strings_are_evidence}
 exit=0
 ```
+
+![FLAG del Nivel 1](screenshots/03_level1_flag.png)
 
 ## 5. Resultado
 

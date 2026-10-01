@@ -10,6 +10,8 @@ Informe general del laboratorio. El detalle de cada nivel está en `docs/evidenc
 
 Baseline (hashes, `file`, `readelf`): [baseline.txt](docs/evidence/reverse/baseline.txt)
 
+![Hashes SHA-256 verificados](docs/evidence/reverse/screenshots/00_hashes.png)
+
 ---
 
 ## 1. Entorno
@@ -64,6 +66,8 @@ Ahora `gdb` ya no reconoce el nombre de la función:
 Function "validate_key" not defined.
 ```
 
+![Sin nombres de funciones en Ghidra](docs/evidence/reverse/screenshots/11_boss_sin_nombres.png)
+
 ### 3.2 Estrategia: seguir los textos ("cadenas → referencias → flujo")
 
 Sin nombres, usamos lo que **sí** quedó:
@@ -112,6 +116,10 @@ En Ghidra: *Search → For Strings* → `License accepted.` → clic derecho →
 
 Renombres sugeridos en Ghidra: `FUN_00401267 → main`, `FUN_00401156 → validate_key`, `FUN_004011f3 → reveal_flag`, `DAT_0040208b → k`, `DAT_00402090 → expected`.
 
+![Referencia desde "License accepted." hasta FUN_00401267 / FUN_00401156](docs/evidence/reverse/screenshots/12_boss_referencia.png)
+
+![FUN_00401156 renombrada a validate_key](docs/evidence/reverse/screenshots/12_boss_referencia_rename_func.png)
+
 ### 3.3 Confirmación dinámica (breakpoints por dirección)
 
 Como no hay nombres, ponemos los *breakpoints* en **direcciones**. Comandos: [`scripts/gdb_boss.gdb`](scripts/gdb_boss.gdb). Logs: [`gdb_boss.log`](docs/evidence/reverse/gdb_logs/gdb_boss.log), [`gdb_boss_bad.log`](docs/evidence/reverse/gdb_logs/gdb_boss_bad.log)
@@ -138,6 +146,8 @@ $ ./crackme_level2_stripped FDSI-REVERSE-2026
 License accepted.
 FLAG{ghidra_plus_gdb}
 ```
+
+![Clave aceptada en el binario stripped](docs/evidence/reverse/screenshots/05_boss_flag.png)
 
 ---
 
