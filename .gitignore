@@ -5,3 +5,6 @@ FDSI_Guia2_Reverse_Engineering_ESTUDIANTES/
 Guia_2_FDSI_Reverse_Engineering_CTF.html
 # Archivos vacíos accidentales
 bin/“*
+# Proyecto local de Ghidra
+reverse_lab.gpr
+reverse_lab.rep/
