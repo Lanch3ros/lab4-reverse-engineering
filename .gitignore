@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+# Material original del docente (copia de trabajo en bin/)
+FDSI_Guia2_Reverse_Engineering_ESTUDIANTES/
+Guia_2_FDSI_Reverse_Engineering_CTF.html
+# Archivos vacíos accidentales
+bin/“*
