@@ -1,0 +1,15 @@
+0x00002aaaab2cb540 in ?? ()
+Breakpoint 1 at 0x4011e7: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 18.
+
+Breakpoint 1, validate_key (candidate=0x2aaaab2abf33 "FDSI-REVERSE-2025") at /mnt/data/reverse_fsi_lab/crackme_level2.c:18
+warning: 18	/mnt/data/reverse_fsi_lab/crackme_level2.c: No such file or directory
+
+### Clave de 17 caracteres pero con UNA letra distinta
+score = 0x3  (distinto de 0 -> clave invalida)
+0x00000000004011eb	18	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+0x00000000004011ee	18	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+rax            0x0                 0
+=== FDSI CrackMe Level 2 ===
+Hint: static + dynamic analysis.
+Invalid license.
+[Inferior 1 (process 660) exited with code 03]

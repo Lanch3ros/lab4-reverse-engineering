@@ -1,0 +1,74 @@
+0x00002aaaab2cb540 in ?? ()
+Breakpoint 1 at 0x401162: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 10.
+
+Breakpoint 1, validate_key (candidate=0x2aaaab2abf40 "AAAA") at /mnt/data/reverse_fsi_lab/crackme_level2.c:10
+warning: 10	/mnt/data/reverse_fsi_lab/crackme_level2.c: No such file or directory
+
+### Argumento recibido en RDI (1er parametro)
+rdi            0x2aaaab2abf40      46912504512320
+0x2aaaab2abf40:	"AAAA"
+
+### Desensamblado de validate_key
+Dump of assembler code for function validate_key:
+   0x0000000000401156 <+0>:	push   rbp
+   0x0000000000401157 <+1>:	mov    rbp,rsp
+   0x000000000040115a <+4>:	sub    rsp,0x30
+   0x000000000040115e <+8>:	mov    QWORD PTR [rbp-0x28],rdi
+=> 0x0000000000401162 <+12>:	mov    QWORD PTR [rbp-0x18],0x11
+   0x000000000040116a <+20>:	mov    rax,QWORD PTR [rbp-0x28]
+   0x000000000040116e <+24>:	mov    rdi,rax
+   0x0000000000401171 <+27>:	call   0x401050 <strlen@plt>
+   0x0000000000401176 <+32>:	cmp    QWORD PTR [rbp-0x18],rax
+   0x000000000040117a <+36>:	je     0x401183 <validate_key+45>
+   0x000000000040117c <+38>:	mov    eax,0x0
+   0x0000000000401181 <+43>:	jmp    0x4011f1 <validate_key+155>
+   0x0000000000401183 <+45>:	mov    DWORD PTR [rbp-0x4],0x0
+   0x000000000040118a <+52>:	mov    QWORD PTR [rbp-0x10],0x0
+   0x0000000000401192 <+60>:	jmp    0x4011dd <validate_key+135>
+   0x0000000000401194 <+62>:	mov    rdx,QWORD PTR [rbp-0x28]
+   0x0000000000401198 <+66>:	mov    rax,QWORD PTR [rbp-0x10]
+   0x000000000040119c <+70>:	add    rax,rdx
+   0x000000000040119f <+73>:	movzx  eax,BYTE PTR [rax]
+   0x00000000004011a2 <+76>:	mov    ecx,eax
+   0x00000000004011a4 <+78>:	mov    rax,QWORD PTR [rbp-0x10]
+   0x00000000004011a8 <+82>:	and    eax,0x3
+   0x00000000004011ab <+85>:	mov    rdx,rax
+   0x00000000004011ae <+88>:	lea    rax,[rip+0xed6]        # 0x40208b <k.1>
+   0x00000000004011b5 <+95>:	movzx  eax,BYTE PTR [rdx+rax*1]
+   0x00000000004011b9 <+99>:	xor    eax,ecx
+   0x00000000004011bb <+101>:	mov    BYTE PTR [rbp-0x19],al
+   0x00000000004011be <+104>:	lea    rdx,[rip+0xecb]        # 0x402090 <expected.0>
+   0x00000000004011c5 <+111>:	mov    rax,QWORD PTR [rbp-0x10]
+   0x00000000004011c9 <+115>:	add    rax,rdx
+   0x00000000004011cc <+118>:	movzx  eax,BYTE PTR [rax]
+   0x00000000004011cf <+121>:	xor    al,BYTE PTR [rbp-0x19]
+   0x00000000004011d2 <+124>:	movzx  eax,al
+   0x00000000004011d5 <+127>:	or     DWORD PTR [rbp-0x4],eax
+   0x00000000004011d8 <+130>:	add    QWORD PTR [rbp-0x10],0x1
+   0x00000000004011dd <+135>:	mov    rax,QWORD PTR [rbp-0x10]
+   0x00000000004011e1 <+139>:	cmp    rax,QWORD PTR [rbp-0x18]
+   0x00000000004011e5 <+143>:	jb     0x401194 <validate_key+62>
+   0x00000000004011e7 <+145>:	cmp    DWORD PTR [rbp-0x4],0x0
+   0x00000000004011eb <+149>:	sete   al
+   0x00000000004011ee <+152>:	movzx  eax,al
+   0x00000000004011f1 <+155>:	leave
+   0x00000000004011f2 <+156>:	ret
+End of assembler dump.
+
+### Parar justo despues de strlen: comparar largo esperado vs real
+Breakpoint 2 at 0x401176: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 11.
+
+Breakpoint 2, 0x0000000000401176 in validate_key (candidate=0x2aaaab2abf40 "AAAA") at /mnt/data/reverse_fsi_lab/crackme_level2.c:11
+11	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+0x2aaaab2abc28:	0x0000000000000011
+rax            0x4                 4
+
+### Salir de la funcion y ver el valor de retorno (RAX)
+0x00000000004012d2 in main (argc=2, argv=0x2aaaab2abd88) at /mnt/data/reverse_fsi_lab/crackme_level2.c:36
+36	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+Value returned is $1 = 0
+rax            0x0                 0
+=== FDSI CrackMe Level 2 ===
+Hint: static + dynamic analysis.
+Invalid license.
+[Inferior 1 (process 687) exited with code 03]

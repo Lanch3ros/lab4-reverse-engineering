@@ -1,0 +1,49 @@
+0x00002aaaab2cb540 in ?? ()
+Breakpoint 1 at 0x401162: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 10.
+
+Breakpoint 1, validate_key (candidate=0x2aaaab2abf33 "FDSI-REVERSE-2026") at /mnt/data/reverse_fsi_lab/crackme_level2.c:10
+warning: 10	/mnt/data/reverse_fsi_lab/crackme_level2.c: No such file or directory
+0x2aaaab2abf33:	"FDSI-REVERSE-2026"
+
+### Arreglos k y expected en memoria
+0x40208b <k.1>:	0x23	0x51	0x17	0x6a
+0x402090 <expected.0>:	0x65	0x15	0x44	0x23	0x0e	0x03	0x52	0x3c
+0x402098 <expected.0+8>:	0x66	0x03	0x44	0x2f	0x0e	0x63	0x27	0x58
+0x4020a0 <expected.0+16>:	0x15
+
+### Breakpoint en el XOR, primeras 4 vueltas del ciclo
+Breakpoint 2 at 0x4011b9: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 15.
+
+Breakpoint 2, validate_key (candidate=0x2aaaab2abf33 "FDSI-REVERSE-2026") at /mnt/data/reverse_fsi_lab/crackme_level2.c:15
+15	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+i=0  letra(ecx)=0x46 'F'  k[i%4](eax)=0x23
+
+Breakpoint 2, validate_key (candidate=0x2aaaab2abf33 "FDSI-REVERSE-2026") at /mnt/data/reverse_fsi_lab/crackme_level2.c:15
+15	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+i=1  letra(ecx)=0x44 'D'  k[i%4](eax)=0x51
+
+Breakpoint 2, validate_key (candidate=0x2aaaab2abf33 "FDSI-REVERSE-2026") at /mnt/data/reverse_fsi_lab/crackme_level2.c:15
+15	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+i=2  letra(ecx)=0x53 'S'  k[i%4](eax)=0x17
+
+Breakpoint 2, validate_key (candidate=0x2aaaab2abf33 "FDSI-REVERSE-2026") at /mnt/data/reverse_fsi_lab/crackme_level2.c:15
+15	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+i=3  letra(ecx)=0x49 'I'  k[i%4](eax)=0x6a
+
+### Al terminar el ciclo: score (diferencias acumuladas)
+Breakpoint 3 at 0x4011e7: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 18.
+
+Breakpoint 3, validate_key (candidate=0x2aaaab2abf33 "FDSI-REVERSE-2026") at /mnt/data/reverse_fsi_lab/crackme_level2.c:18
+18	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+score = 0
+
+### Valor de retorno de validate_key
+0x00000000004012d2 in main (argc=2, argv=0x2aaaab2abd78) at /mnt/data/reverse_fsi_lab/crackme_level2.c:36
+36	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+Value returned is $1 = 1
+rax            0x1                 1
+=== FDSI CrackMe Level 2 ===
+Hint: static + dynamic analysis.
+License accepted.
+FLAG{ghidra_plus_gdb}
+[Inferior 1 (process 640) exited normally]
