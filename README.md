@@ -2,6 +2,8 @@
 
 Ruta alternativa local del Lab 04: análisis de tres crackmes ELF x86-64 sin código fuente.
 
+- Integrantes: **JOSE LUIS LANCHEROS AYORA, JUAN DAVID GÓMEZ CUELLAR Y JEYDER NICOLAY LEÓN LANCHEROS.**
+
 ## Resultados
 
 | Nivel | Binario | Clave | FLAG |
